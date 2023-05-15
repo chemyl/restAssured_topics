@@ -10,8 +10,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 public class StudentsHTTPRequests {
-//    http://localhost:3000/students
-
+    //    http://localhost:3000/students
     @Test(testName = "Create new students 1 method")
     public void createStudentByHashMap() {
         String courseArray[] = {"Java", "C--", "C++"};
@@ -77,4 +76,3 @@ public class StudentsHTTPRequests {
 
     }
 }
-

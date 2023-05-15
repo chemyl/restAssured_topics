@@ -3,7 +3,7 @@ package restAssured.httpRequests;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 
-public class LoggingExamples {
+public class LoggingExample {
 
     @Test(testName = "using .log()")
     public void usingOfLogging() {
@@ -13,7 +13,7 @@ public class LoggingExamples {
                 .log().all();           //entire response
 //                .log().body();          //only body
 //                .log().cookies();       //only cookies
-//                .log().headers();           //only headers from response
+//                .log().headers();       //only headers from response
 
     }
 }
