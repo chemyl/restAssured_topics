@@ -2,6 +2,7 @@ package restAssured.httpRequests;
 
 import org.json.JSONObject;
 import org.testng.annotations.Test;
+import restAssured.utils.PojoPostRequest;
 
 import java.util.HashMap;
 

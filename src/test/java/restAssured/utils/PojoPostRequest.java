@@ -1,4 +1,4 @@
-package restAssured.httpRequests;
+package restAssured.utils;
 
 public class PojoPostRequest {
     String name;
@@ -13,8 +13,6 @@ public class PojoPostRequest {
     public void setCourse(String[] course) {
         this.course = course;
     }
-
-
 
     public String getName() {
         return name;
@@ -39,6 +37,5 @@ public class PojoPostRequest {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
 
 }
