@@ -7,9 +7,9 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class HeadersExample {
+public class HeadersExampleTest {
 
-    @Test(testName = "capture headers info from response")
+    @Test(testName = "Capture headers info from response")
     public void getHeadersInfo() {
         Response res = given().when().get("https://www.google.com/");
 //Get specific Header
@@ -23,7 +23,7 @@ public class HeadersExample {
         //        then().log().headers();                                 //Print only headers in console output
     }
 
-    @Test(testName = "validate headers info from response")
+    @Test(testName = "Validate headers info from response")
     public void checkHeadersInfo() {
         given().when().get("https://www.google.com/")
                 .then()

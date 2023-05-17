@@ -11,21 +11,9 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class AssertionsExample {
+public class AssertionsExampleTest {
 
-    //Response JSONObject Example
-   /* {     "id": 1,
-            "name": "John",
-            "location": "India",
-            "phone": "1234567890",
-            "courses": [
-                "Java",
-                "Selenium",
-                "Postman",
-                "RestAssured" ] }
-    */
-
-    @Test(testName = "assertions example")
+    @Test(testName = "Asserts on Response object")
     public void assertionsExamples() {
         RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
         Response res = given().when().get("http://localhost:3000/students");
@@ -35,7 +23,7 @@ public class AssertionsExample {
 
     }
 
-    @Test(testName = "json object class to response validation")
+    @Test(testName = "Advantage asserts by converting Response to JSONArray and JSONObject")
     public void jsonObjectClass() {
         RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
         Response res = given().contentType(ContentType.JSON).when().get("http://localhost:3000/students");
@@ -52,3 +40,15 @@ public class AssertionsExample {
         Assert.assertFalse(ja.isEmpty(), "Assert message-> Json response is empty");
     }
 }
+
+//Response JSONObject Example
+   /* {     "id": 1,
+            "name": "John",
+            "location": "India",
+            "phone": "1234567890",
+            "courses": [
+                "Java",
+                "Selenium",
+                "Postman",
+                "RestAssured" ] }
+    */

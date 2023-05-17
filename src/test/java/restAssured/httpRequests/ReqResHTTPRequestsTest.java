@@ -7,16 +7,10 @@ import java.util.HashMap;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-// Get list of users
-// Get single user by ID
-// Create new user
-// Update user By ID
-// Delete user By ID
-
-public class ReqResHTTPRequests {
+public class ReqResHTTPRequestsTest {
     int newUserID;
 
-    @Test(testName = "Get list of users")
+    @Test(testName = "Get list of users")       // Get list of users
     public void getListOfUsers() {
         given().when()
                 .get("https://reqres.in/api/users?page=2")
@@ -27,7 +21,7 @@ public class ReqResHTTPRequests {
                 .log().all();
     }
 
-    @Test(testName = "Get Simple user", priority = 1)
+    @Test(testName = "Get Simple user", priority = 1)       // Get single user by ID
     public void getUser() {
         given().
                 when().get("https://reqres.in/api/users/2").
@@ -37,9 +31,9 @@ public class ReqResHTTPRequests {
                 .log().all();
     }
 
-    @Test(testName = "Create New User", priority = 2)
+    @Test(testName = "Create New User", priority = 2)       // Create new user
     public void createNewUser() {
-        HashMap data = new HashMap();
+        HashMap<String, String> data = new HashMap<>();
         data.put("name", "morpheus");
         data.put("job", "trainer");
         newUserID = given()
@@ -48,12 +42,11 @@ public class ReqResHTTPRequests {
                 .when()
                 .post("https://reqres.in/api/users")
                 .jsonPath().getInt("id");
-//        .then().statusCode(201).log().all()
     }
 
-    @Test(testName = "Update user by ID", dependsOnMethods = {"createNewUser"})
+    @Test(testName = "Update user by ID", dependsOnMethods = {"createNewUser"})     // Update user By ID
     public void updateUserById() {
-        HashMap data = new HashMap();
+        HashMap<String, String> data = new HashMap<>();
         data.put("name", "morpheus");
         data.put("job", "dancer");
         given().contentType("application/json").body(data)
@@ -61,7 +54,7 @@ public class ReqResHTTPRequests {
                 .then().statusCode(200).body("job", equalTo(data.get("job"))).log().all();
     }
 
-    @Test(testName = "Delete created user")
+    @Test(testName = "Delete created user")     // Delete user By ID
     public void deleteUserById() {
         given().when().delete("https://reqres.in/api/users/" + newUserID).then().statusCode(204);
     }
