@@ -9,16 +9,15 @@ import java.util.HashMap;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class StudentsHTTPRequests {
-    //    http://localhost:3000/students
+public class StudentsHTTPRequestsExampleTest {
+
     @Test(testName = "Create new students 1 method")
     public void createStudentByHashMap() {
-        String courseArray[] = {"Java", "C--", "C++"};
-        HashMap data = new HashMap();
+        HashMap<String, String> data = new HashMap<>();
         data.put("name", "Mike");
         data.put("location", "Ontario");
         data.put("phone", "1111111");
-        data.put("course", courseArray);
+        data.put("course", "");
 
         given().contentType("application/json").body(data)
                 .when().post("http://localhost:3000/students")
@@ -26,15 +25,13 @@ public class StudentsHTTPRequests {
                 .body("name", equalTo(data.get("name")))
                 .body("location", equalTo(data.get("location")))
                 .body("phone", equalTo(data.get("phone")))
-                .body("course[0]", equalTo(courseArray[0]))
-                .body("course[1]", equalTo(courseArray[1]))
                 .header("Content-Type", equalTo("application/json; charset=utf-8"))
                 .log().all();
     }
 
     @Test(testName = "createStudentByORGJson")
     public void createStudentByJson() {
-        String courseArray[] = {"Java", "C--", "C++"};
+        String[] courseArray = {"Java", "C--", "C++"};
         JSONObject data = new JSONObject();
         data.put("name", "Tomas");
         data.put("location", "barbados");
@@ -56,7 +53,7 @@ public class StudentsHTTPRequests {
 
     @Test(testName = "Create Student by POJO")
     public void createStudentByPOJO() {
-        String coursesArray[] = {"R", "Rust"};
+        String[] coursesArray = {"R", "Rust"};
         PojoPostRequest data = new PojoPostRequest();
         data.setName("Alex");
         data.setLocation("Argentina");

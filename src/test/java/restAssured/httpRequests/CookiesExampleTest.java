@@ -10,8 +10,8 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class CookiesExample {
-    @Test(testName = "get cookies from response")
+public class CookiesExampleTest {
+    @Test(testName = "Get cookies from Response object")
     public void getCookiesInfo() {
         RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
 //Get specific Cookie
