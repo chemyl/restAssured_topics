@@ -14,14 +14,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
-<!--        //////////////TestNG //////////-->
+        <!--        //////////////TestNG //////////-->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.7.1</version>
             <scope>test</scope>
         </dependency>
-<!--        //////////////RESTAssured workflow//////////-->
+        <!--        //////////////RESTAssured workflow//////////-->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
@@ -46,13 +46,6 @@
             <version>5.3.0</version>
             <scope>test</scope>
         </dependency>
-<!--        //////////////scribe //////////-->
-        <dependency>
-            <groupId>com.github.scribejava</groupId>
-            <artifactId>scribejava-apis</artifactId>
-            <version>8.3.1</version>
-            <scope>test</scope>
-        </dependency>
         <!--        //////////////faker //////////-->
         <dependency>
             <groupId>com.github.javafaker</groupId>
@@ -65,23 +58,11 @@
             <artifactId>json</artifactId>
             <version>20220320</version>
         </dependency>
-        <!--        //////////////gson //////////-->
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.9.1</version>
-        </dependency>
         <!--        //////////////xml validator //////////-->
         <dependency>
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>
             <version>1.4.01</version>
-        </dependency>
-        <!--        //////////////slf4j //////////-->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.7.32</version>
         </dependency>
     </dependencies>
 
